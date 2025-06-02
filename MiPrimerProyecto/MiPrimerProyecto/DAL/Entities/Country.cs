@@ -8,5 +8,8 @@ namespace MiPrimerProyecto.DAL.Entities
         [MaxLength(50, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres.")]//Longitud del nombre
         [Required(ErrorMessage = "El campo pais es obligatorio")]//Campo obligatorio
         public string Name { get; set; }
+
+        [Display(Name = "Estados/Departamentos")]
+        public ICollection<State>? States { get; set; }
     }
 }

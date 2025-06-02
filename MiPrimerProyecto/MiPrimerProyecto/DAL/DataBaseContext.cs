@@ -16,11 +16,14 @@ namespace MiPrimerProyecto.DAL
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Country>().HasIndex(c =>  c.Name).IsUnique();//Aqui se crea un indice del campo Name para la tabla countries
+            modelBuilder.Entity<State>().HasIndex("Name", "CountryId").IsUnique();//Con esta instruccion hacemos un indice compuesto
         }
 
         #region DbSets
 
         public DbSet<Country> countries { get; set; }
+
+        public DbSet<State> States { get; set; }
 
         #endregion
     }
